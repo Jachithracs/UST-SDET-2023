@@ -16,5 +16,6 @@ Student student = new Student(StudentName, markOne, markTwo, markThree);
 
 Console.WriteLine("Student Name is : " + StudentName);
 Console.WriteLine("Total Mark is : " + student.TotalMark());
+Console.WriteLine("Average Mark is : " + student.CalculateAverage());
 Console.WriteLine("Grade is : " +student.DisplayGrade());
 
