@@ -52,6 +52,8 @@ switch(x)
 //driver
 using Basic_Programs;
 
+//Calculation Class
+
 /*
 Calculation calculation = new Calculation();
 
@@ -62,11 +64,12 @@ int num2=Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(res);
 */
 
+//Electricity Class
 
 //Electricity electricity = new ();
 //Electricity electricity = new Electricity();
 //double billamount = electricity.CalculateBill();
-
+/*
 int consumernumber=Convert.ToInt32(Console.ReadLine());
 
 Electricity electricity1 = new Electricity(consumernumber, 9000, 9300, "XX");
@@ -80,6 +83,35 @@ Electricity electricity2 = new Electricity(23456, 9000, 10000, "AA");
 Console.WriteLine(electricity2.consumername);
 Console.WriteLine(electricity2.consumernumber);
 Console.WriteLine(electricity2.CalculateBill());
+
+*/
+
+
+//Employee Class
+/*
+Employee employee = new(101, "Devu", "IT", 10000);
+
+//Console.WriteLine("Employee Id : " + employee.EmployeeId);
+//Console.WriteLine("Employee Name : " + employee.EmployeeName);
+//Console.WriteLine("Department : " + employee.Department);
+//Console.WriteLine(employee.BasicPay);
+
+Console.WriteLine("\n Employee Id : {0} \n Employee Name : {1} \n Department : {2} \n " +
+                  "Basic Pay : {3}  " , employee.EmployeeId, employee.EmployeeName, employee.Department,
+                  employee.BasicPay);
+
+Console.WriteLine("\n Net Pay : {0} " , employee.CalculateSalary());
+
+*/
+
+
+//Array Example Class
+
+ArrayExample arrayExample = new ();
+//arrayExample.OneDimensional();
+//arrayExample.Twodimensional();
+arrayExample.JaggedArray();
+
 
 
 
