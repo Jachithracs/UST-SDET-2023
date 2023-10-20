@@ -1,7 +1,7 @@
 ﻿
 using Assignments;
 
-// 18-10-2023
+// *****18-10-2023******
 
 //Student Class
 
@@ -23,7 +23,7 @@ Console.WriteLine("Average Mark is : " + student.CalculateAverage());
 Console.WriteLine("Grade is : " +student.DisplayGrade());
 */
 
-//19-10-2023
+//********19-10-2023***********
 
 //Product Class
 
@@ -45,7 +45,7 @@ foreach (var product in products)
 */
 
 //Students Class
-
+/*
 Students[] students = new Students[]
 {
     new("Devu",new double[]{98,90,95},"A"),
@@ -72,5 +72,37 @@ foreach (Students student in students)
     Console.WriteLine("\n"+student.GetMarksSummary());
     Console.WriteLine();
 }
+*/
+
+//**********20-10-2023************
+
+//Single Inheritance
+/*
+ElectronicsProduct eproduct = new("Tv",10000,5,2);
+Console.WriteLine("Product Name : "+eproduct.ProductName);
+Console.WriteLine("Product Price :"+eproduct.Price);
+Console.WriteLine("Product Quantity :"+eproduct.Quantity);
+Console.WriteLine("Warranty Period :"+eproduct.DisplayWarrantyPeriod());
+Console.WriteLine("Product Value :"+eproduct.ProductValue());
+*/
+
+//Multi-level Inheritance
+/*
+DigitalProduct dproduct = new("Radio", 20000, 8, 5,"PDF");
+Console.WriteLine("Product Name : " + dproduct.ProductName);
+Console.WriteLine("Product Price :" + dproduct.Price);
+Console.WriteLine("Product Quantity :" + dproduct.Quantity);
+Console.WriteLine("Warranty Period :" + dproduct.DisplayWarrantyPeriod());
+Console.WriteLine("Product Value :" + dproduct.ProductValue());
+dproduct.DisplayFileFormat();
+*/
+
+//Hierarchical Inheritance
+ElectronicsProduct eproduct = new("Tv", 10000, 5, 2);
+DigitalProduct dproduct = new("Radio", 20000, 8, 5, "PDF");
+ClothingProduct cproduct = new("Shirt", 1500, 10, "Medium");
+Console.WriteLine("Product value of Electronic Product :"+eproduct.ProductValue());
+Console.WriteLine("Product value of Digital Product :" + dproduct.ProductValue());
+Console.WriteLine("Product value of Clothing Product :" + cproduct.ProductValue());
 
 
