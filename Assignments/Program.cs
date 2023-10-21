@@ -98,11 +98,13 @@ dproduct.DisplayFileFormat();
 */
 
 //Hierarchical Inheritance
+/*
 ElectronicsProduct eproduct = new("Tv", 10000, 5, 2);
 DigitalProduct dproduct = new("Radio", 20000, 8, 5, "PDF");
 ClothingProduct cproduct = new("Shirt", 1500, 10, "Medium");
 Console.WriteLine("Product value of Electronic Product :"+eproduct.ProductValue());
 Console.WriteLine("Product value of Digital Product :" + dproduct.ProductValue());
 Console.WriteLine("Product value of Clothing Product :" + cproduct.ProductValue());
+*/
 
 

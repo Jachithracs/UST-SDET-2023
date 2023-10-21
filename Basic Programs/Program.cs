@@ -105,7 +105,7 @@ Console.WriteLine("\n Net Pay : {0} " , employee.CalculateSalary());
 */
 
 
-//Array Example Class
+//*****************************Array Example Class***********************
 /*
 ArrayExample arrayExample = new ();
 //arrayExample.OneDimensional();
@@ -114,7 +114,7 @@ arrayExample.JaggedArray();
 */
 
 
-//Student Details & Student Marks & Student Grade Class
+//**************Student Details & Student Marks & Student Grade Class*******************
 
 /*
 //Single Inheritance
@@ -196,7 +196,8 @@ switch(Convert.ToInt32(Console.ReadLine()))
 */
 
 
-//Vehicle & EV & PV class
+//*****************Vehicle & EV & PV class*********************
+/*
 EV ev = new();
 ev.vehnum = 1234;
 ev.Brand = "XX";
@@ -210,6 +211,17 @@ pv.Brand = "YY";
 pv.Model = "BB";
 pv.Display();
 Console.WriteLine(pv.setTypeForVeh());
+*/
+
+//*************Doctor class*******************
+Doctor doc = new Doctor();
+//IDoctor doc = new Doctor();
+doc.AddNewDoctor(1234,"AA");
+doc.DisplayDoctorDetails();
+doc.ModifyDoctor(9876,"BB");
+doc.DisplayDoctorDetails();
+doc.BookApp(2345,"XX");
+doc.DelApp("XX");
 
 
 
