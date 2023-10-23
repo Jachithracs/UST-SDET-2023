@@ -8,15 +8,22 @@ namespace CaseStudy
 {
     internal class Customer
     {
+        public Customer(int customerId,string? customerName, double contactDetail)
+        {
+            CustomerId = customerId;
+            CustomerName = customerName;
+            ContactDetail = contactDetail;
+            
+        }
+        public int CustomerId { get; set; }
         public string? CustomerName { get; set; }
         public double ContactDetail { get; set; }
        
-        public int CustomerId { get; set; }
+       
 
         public void DisplayCustomerDetails()
         {
-            Console.WriteLine("Customer Id :{0} \n Customer Name : {1} \n Contact Details : {2} ",CustomerId,
-                CustomerName,ContactDetail);
+            Console.WriteLine($"CustomerId is:{CustomerId}\nCustomerName:{CustomerName}\nContact Details:{ContactDetail}");
         }
 
     }

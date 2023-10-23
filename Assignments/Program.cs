@@ -107,4 +107,22 @@ Console.WriteLine("Product value of Digital Product :" + dproduct.ProductValue()
 Console.WriteLine("Product value of Clothing Product :" + cproduct.ProductValue());
 */
 
+//23-10-2023
+//Employee,Person & IDisplayable class
+/*
+Employee employee = new("Devu", "S", 24, 101);
+employee.DisplayInfo();
+*/
+
+//Shape,Circle,Rectangle,IDrawable class
+
+Circle circle = new Circle();
+circle.Radius = 2;
+circle.Draw();
+
+Rectangle rectangle = new Rectangle();
+rectangle.Length = 5;
+rectangle.Width = 5;
+rectangle.Draw();
+
 

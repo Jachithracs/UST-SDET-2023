@@ -8,6 +8,12 @@ namespace CaseStudy
 {
     internal class Order
     {
+        public Order(string? orderDate, double totalCost)
+        {
+            OrderDate = orderDate;
+            TotalCost = totalCost;
+        }
+
         public string? OrderDate { get; set; }
         public double TotalCost { get; set; }
 

@@ -2,7 +2,6 @@
 //Case Study 1
 
 using CaseStudy;
-using System.Reflection;
 
 
 int choice = 1;
@@ -42,12 +41,13 @@ do
 
             Console.WriteLine("Enter Customer Id :");
             customerid = Convert.ToInt32(Console.ReadLine());
+           // Console.WriteLine(customerid);
             Console.WriteLine("Enter Customer Name :");
             customerName = Console.ReadLine();
             Console.WriteLine("Enter Contact Details :");
-            contactDetail = Convert.ToInt32(Console.ReadLine());
+            contactDetail = Convert.ToDouble(Console.ReadLine());
 
-            Customer customer = new Customer();
+            Customer customer = new Customer(customerid,customerName,contactDetail);
             customer.DisplayCustomerDetails();
             break;
         case 3:
@@ -63,7 +63,7 @@ do
                     Console.WriteLine("Order is Confirmed!!!");
                     total = genres.Price;
 
-                    Order order = new Order();
+                    Order order = new Order(orderDate,total);
 
                     Console.WriteLine("Details are : ");
                     order.OrderConfirmed();
@@ -92,16 +92,17 @@ do
                     Console.WriteLine("Books are not available");
                 }
             }
-            break;
+        break;
 
         case 5:
             Environment.Exit(0);
-            break;
+        break;
         default:
             Console.WriteLine("Invalid Choice");
-            break;
-            Console.WriteLine("Do you want to continue 1.Yes or 2.No");
-            choice = Convert.ToInt32(Console.ReadLine());
+        break;
     }
+    Console.WriteLine("Do you want to continue 1.Yes or 2.No");
+    choice = Convert.ToInt32(Console.ReadLine());
+   
 
     } while (choice != 0) ;
