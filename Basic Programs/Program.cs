@@ -233,6 +233,7 @@ doc.DelApp("XX");
 //BankDetails bank2 = new BankDetails(999,9876543210L,"BB");
 
 //BankDetailsNew bank2 = new BankDetailsNew(999, 9876543210L, "BB","Inactive");
+/*
  BankDetails bank2 = new BankDetailsNew(999, 9876543210L, "BB", "Inactive");
 
 bank2.WelcomeMessage();
@@ -262,7 +263,22 @@ switch(ch)
 }
 
 bank2.ExitMessage();
+*/
 
+//***********************NonGenericCollection Class************************
+
+NonGenericCollection ngc = new NonGenericCollection();
+//ngc.ArrayListHandling();
+//ngc.StackHandling();
+//ngc.QueueHandling();
+//ngc.HashHandling();
+//ngc.SortedListHandling();
+
+GenericCollection genericCollection = new GenericCollection();
+//genericCollection.ListHandling();
+//genericCollection.StackHandling();
+//genericCollection.QueueHandling();
+genericCollection.DictionaryHandling();
 
 
 

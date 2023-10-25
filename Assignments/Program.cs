@@ -115,7 +115,7 @@ employee.DisplayInfo();
 */
 
 //Shape,Circle,Rectangle,IDrawable class
-
+/*
 Circle circle = new Circle();
 circle.Radius = 2;
 circle.Draw();
@@ -124,5 +124,40 @@ Rectangle rectangle = new Rectangle();
 rectangle.Length = 5;
 rectangle.Width = 5;
 rectangle.Draw();
+*/
+
+//25-10-2023
+//Insurance Policy Class
+
+/*
+InsurancePolicy insurancePolicy = new InsurancePolicy("Health",101,15000);
+insurancePolicy.RenewPolicy();
+insurancePolicy.RenewPolicy(2000);
+*/
+
+//AbstractInsurancePolicy , LifeInsurance & CarInsurance Policy
+
+LifeInsurance lifeInsurance = new LifeInsurance();
+lifeInsurance.PolicyName = "Health";
+lifeInsurance.PolicyId = 101;
+lifeInsurance.PremiumAmount = 3000;
+lifeInsurance.Age = 74;
+Console.WriteLine("Life Insurance : ");
+Console.WriteLine("Policy Name : {0}\n Policy Id : {1} \n Premium Amount : {2}",lifeInsurance.PolicyName,lifeInsurance.PolicyId,
+    lifeInsurance.PremiumAmount);
+Console.WriteLine("Insurance Amount : "+lifeInsurance.CalculatePremium());
+
+Console.WriteLine();
+
+CarInsurance carInsurance = new CarInsurance();
+carInsurance.PolicyName = "Accident";
+carInsurance.PolicyId = 999;
+carInsurance.PremiumAmount = 8000;
+carInsurance.VehicleType = "BMW";
+Console.WriteLine("Car Insurance : ");
+Console.WriteLine("Policy Name : {0}\n Policy Id : {1} \n Premium Amount : {2}", carInsurance.PolicyName, carInsurance.PolicyId,
+    carInsurance.PremiumAmount);
+Console.WriteLine("Insurance Amount : " + carInsurance.CalculatePremium());
+
 
 
