@@ -165,6 +165,43 @@ Console.WriteLine("Insurance Amount : " + carInsurance.CalculatePremium());
 
 //****************26-10-2023*********************
 
-//
+//Customer Class
+/*
+Customer customer = new(999,"Devu",987654321,15000);
+Customer customer2 = new(1001, "Lakshmi", 976584123, 23000);
+Customer customer3 = new(1002, "Ganga", 968472614, 17000);
+
+Customer.customers.Add(customer);
+Customer.customers.Add(customer2);
+Customer.customers.Add(customer3);
+
+Console.WriteLine("Enter Phone number : ");
+int phoneNumber = Convert.ToInt32(Console.ReadLine());
+Customer.DisplayBalanceDetails(phoneNumber);
+
+Customer.DisplayCustomerDetails();
+*/
+
+//CallRecord Class
+/*
+CallRecord callRecord = new(201,987654321,5);
+CallRecord callRecord2 = new(301, 9867452313, 9);
+CallRecord callRecord3 = new(401, 918273645, 15);
+CallRecord callRecord4 = new(501, 987654321, 8);
+CallRecord callRecord5 = new(601, 918273645, 10);
+
+CallRecord.call.Add(callRecord);
+CallRecord.call.Add(callRecord2);
+CallRecord.call.Add(callRecord3);
+CallRecord.call.Add(callRecord4);
+CallRecord.call.Add(callRecord5);
+
+Console.WriteLine("Enter Phone Number :");
+long phone = Convert.ToInt64(Console.ReadLine());
+CallRecord.DisplayPhoneHistoryDetails(phone);
+CallRecord.DisplayTotalHistoryCalls();
+*/
+
+//Patient Class
 
 
