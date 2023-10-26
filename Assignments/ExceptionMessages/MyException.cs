@@ -9,15 +9,15 @@ namespace Assignments.ExceptionMessages
 
     internal class MyException
     {
-        public static Dictionary<string, string> exmesslist = new Dictionary<string, string>();
-        public MyException()
+        public static Dictionary<string, string> exmesslist = new Dictionary<string, string>()
+      
         {
-            exmesslist.Add("Age", "Age must be between 0 & 120");
-            exmesslist.Add("Name", "Name cannot be null or empty");
-            exmesslist.Add("Diagnosis", "Diagnosis cannot be null or empty");
+            { "Age", "Age must be between 0 & 120" },
+            { "Name", "Name cannot be null or empty" },
+            {"Diagnosis", "Diagnosis cannot be null or empty"}
             
 
-        }
+        };
     }
 
         internal class AgeException : Exception

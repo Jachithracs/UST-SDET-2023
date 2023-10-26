@@ -1,5 +1,7 @@
 ﻿
 using Assignments;
+using Assignments.ExceptionMessages;
+using System;
 
 // *****18-10-2023******
 
@@ -204,4 +206,27 @@ CallRecord.DisplayTotalHistoryCalls();
 
 //Patient Class
 
+Patient patient1 = new Patient(101, "Deeran", 23, "Dengue");
+try
+{
+    Patient.AddPatientInfo(patient1);
 
+}
+catch (AgeException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+catch (NameException naex)
+{
+    Console.WriteLine(naex.Message);
+}
+catch (DiagnosisException diex)
+{
+    Console.WriteLine(diex.Message);
+}
+catch (Exception eex)
+{
+    Console.WriteLine(eex.Message);
+}
+
+Patient.DisplayPatientDetails();
