@@ -51,6 +51,7 @@ switch(x)
 
 //driver
 using Basic_Programs;
+using Basic_Programs.ExceptionMessages;
 
 //************Calculation Class*******************
 
@@ -266,7 +267,7 @@ bank2.ExitMessage();
 */
 
 //***********************NonGenericCollection Class************************
-
+/*
 NonGenericCollection ngc = new NonGenericCollection();
 //ngc.ArrayListHandling();
 //ngc.StackHandling();
@@ -274,12 +275,65 @@ NonGenericCollection ngc = new NonGenericCollection();
 //ngc.HashHandling();
 //ngc.SortedListHandling();
 
+//***********************GenericCollection Class************************
 GenericCollection genericCollection = new GenericCollection();
 //genericCollection.ListHandling();
 //genericCollection.StackHandling();
 //genericCollection.QueueHandling();
 genericCollection.DictionaryHandling();
+*/
 
+//**************ExceptionHandling,MyExceptions class & ExceptionMessages Folder***********
+
+ExceptionHandling exception = new ExceptionHandling(10, 107);
+
+try
+{
+    exception.NumCheck1();
+    
+}
+catch(Num1Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+try
+{
+    exception.NumCheck2();
+}
+catch (Num2Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+/*
+try
+{
+    exception.Divide();
+}
+catch (ArithmeticException ex)
+{
+    //Console.WriteLine(ex.Message);
+    //Console.WriteLine(ex.StackTrace);
+    //Console.WriteLine(ex.Source);
+    // Console.WriteLine(MyExceptions.exmesslist[0]);
+    Console.WriteLine(MyExceptions.exmesslist[1]);
+}
+catch (IndexOutOfRangeException ex)
+{
+    Console.WriteLine(MyExceptions.exmesslist[2]);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(MyExceptions.exmesslist[3]);
+}
+finally
+{
+    Console.WriteLine("Done");
+}
+*/
+
+
+//
 
 
 

@@ -107,7 +107,8 @@ Console.WriteLine("Product value of Digital Product :" + dproduct.ProductValue()
 Console.WriteLine("Product value of Clothing Product :" + cproduct.ProductValue());
 */
 
-//23-10-2023
+//**************23-10-2023*************
+
 //Employee,Person & IDisplayable class
 /*
 Employee employee = new("Devu", "S", 24, 101);
@@ -126,7 +127,8 @@ rectangle.Width = 5;
 rectangle.Draw();
 */
 
-//25-10-2023
+//**********************25-10-2023******************
+
 //Insurance Policy Class
 
 /*
@@ -137,6 +139,7 @@ insurancePolicy.RenewPolicy(2000);
 
 //AbstractInsurancePolicy , LifeInsurance & CarInsurance Policy
 
+/*
 LifeInsurance lifeInsurance = new LifeInsurance();
 lifeInsurance.PolicyName = "Health";
 lifeInsurance.PolicyId = 101;
@@ -158,6 +161,10 @@ Console.WriteLine("Car Insurance : ");
 Console.WriteLine("Policy Name : {0}\n Policy Id : {1} \n Premium Amount : {2}", carInsurance.PolicyName, carInsurance.PolicyId,
     carInsurance.PremiumAmount);
 Console.WriteLine("Insurance Amount : " + carInsurance.CalculatePremium());
+*/
 
+//****************26-10-2023*********************
+
+//
 
 
