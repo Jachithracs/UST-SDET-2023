@@ -268,7 +268,8 @@ catch (Exception eex)
 MedicalRecord.DisplayMedicalInfo();
 */
 
-//
+//Patient Class
+/*
 int num = 1;
 do
 {
@@ -308,3 +309,46 @@ int choice =Convert.ToInt32(Console.ReadLine());
 
 } while (num == 1);
 
+*/
+//Medical History Class
+
+int num = 1;
+do
+{
+    Console.WriteLine("Medical History");
+    Console.WriteLine("1.Add Patient Details 2.Display Patient History 3.Exit");
+    int choice = Convert.ToInt32(Console.ReadLine());
+    
+
+    switch (choice)
+    {
+        case 1:
+            Console.WriteLine("Enter Record Id :");
+            int rId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Patient Id :");
+            int pId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Description :");
+            string? descript = Console.ReadLine();
+            Console.WriteLine("Enter Date :");
+            string? dat = Console.ReadLine();
+            MedicalHistory medicalHistory = new(rId,pId,descript, dat);
+            MedicalHistory.AddPatientInfo(medicalHistory);
+            MedicalHistory.AddPatientHistFile(medicalHistory);
+        break;
+        case 2:
+            Console.WriteLine("Enter Patient Id for Search the details : ");
+            int pid = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Patient History :");
+            MedicalHistory.DisplayPatientDetails(pid);
+        break;
+        case 3:
+            Environment.Exit(0);
+        break;
+        default:
+            Console.WriteLine("Invalid Choice!!!");
+        break;
+    }
+    Console.WriteLine("Do you want to continue Press 1 or 0 to exit");
+    num = Convert.ToInt32(Console.ReadLine());
+
+} while (num == 1);

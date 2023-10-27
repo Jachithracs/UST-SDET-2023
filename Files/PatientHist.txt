@@ -1,0 +1,16 @@
+Record Id : 108
+Patient Id : 543
+Description : Consult neuro surgeon
+Date :13/10/2023
+Record Id : 101
+Patient Id : 201
+Description : Take rest
+Date :23/10/2023
+Record Id : 101
+Patient Id : 201
+Description : take rest
+Date :23/10/2023
+Record Id : 101
+Patient Id : 201
+Description : Take rest
+Date :23/10/2023
