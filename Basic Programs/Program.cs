@@ -284,7 +284,7 @@ genericCollection.DictionaryHandling();
 */
 
 //**************ExceptionHandling,MyExceptions class & ExceptionMessages Folder***********
-
+/*
 ExceptionHandling exception = new ExceptionHandling(10, 107);
 
 try
@@ -304,6 +304,7 @@ catch (Num2Exception ex)
 {
     Console.WriteLine(ex.Message);
 }
+*/
 
 /*
 try
@@ -333,7 +334,14 @@ finally
 */
 
 
-//
+//***********FileOperations Class************
+FileOperations fileOperations = new FileOperations();
+//fileOperations.CreateFile();
+//fileOperations.WriteData();
+//fileOperations.ReadData();
+//fileOperations.CopyMoveFile();
+//fileOperations.DeleteFile();
+fileOperations.FileProperties();
 
 
 
