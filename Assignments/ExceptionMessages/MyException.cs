@@ -15,7 +15,7 @@ namespace Assignments.ExceptionMessages
             { "Age", "Age must be between 0 & 120" },
             { "Name", "Name cannot be null or empty" },
             {"Diagnosis", "Diagnosis cannot be null or empty"}
-            
+                 
 
         };
     }
@@ -32,7 +32,11 @@ namespace Assignments.ExceptionMessages
         {
             public DiagnosisException(string message) : base(message) { }
         }
-    
+       
+
+
+
+
 
 }
 

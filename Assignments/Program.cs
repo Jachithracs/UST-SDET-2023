@@ -204,8 +204,8 @@ CallRecord.DisplayPhoneHistoryDetails(phone);
 CallRecord.DisplayTotalHistoryCalls();
 */
 
-//Patient Class
-
+//Patient Class & MyException Class
+/*
 Patient patient1 = new Patient(101, "Deeran", 23, "Dengue");
 try
 {
@@ -230,3 +230,42 @@ catch (Exception eex)
 }
 
 Patient.DisplayPatientDetails();
+*/
+
+//*****************27/10/2023************
+
+//Medical Record  & MedicalException class
+
+MedicalRecord medicalRecord = new(101, "Renjan", 30, "Fever", 3421,12300);
+try
+{
+    MedicalRecord.AddMedicalDetails(medicalRecord);
+}
+catch (AgeException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+catch (NameException naex)
+{
+    Console.WriteLine(naex.Message);
+}
+catch (DiagnosisException diex)
+{
+    Console.WriteLine(diex.Message);
+}
+catch(RecIdException rex)
+{
+    Console.WriteLine(rex.Message);
+}
+catch(CostException cex)
+{ 
+    Console.WriteLine(cex.Message);
+}
+catch (Exception eex)
+{
+    Console.WriteLine(eex.Message);
+}
+MedicalRecord.DisplayMedicalInfo();
+
+
+
