@@ -1,0 +1,12 @@
+Patient Id : 102
+Patient Name : Angel
+Patient Age : 45
+Diagnosis :Fever
+Patient Id : 103
+Patient Name : Heera
+Patient Age : 56
+Diagnosis :Dengue
+Patient Id : 104
+Patient Name : Fida
+Patient Age : 34
+Diagnosis :Fracture

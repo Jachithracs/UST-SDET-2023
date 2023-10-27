@@ -235,7 +235,7 @@ Patient.DisplayPatientDetails();
 //*****************27/10/2023************
 
 //Medical Record  & MedicalException class
-
+/*
 MedicalRecord medicalRecord = new(101, "Renjan", 30, "Fever", 3421,12300);
 try
 {
@@ -266,6 +266,45 @@ catch (Exception eex)
     Console.WriteLine(eex.Message);
 }
 MedicalRecord.DisplayMedicalInfo();
+*/
+
+//
+int num = 1;
+do
+{
+    Console.WriteLine("Patient Details");
+Console.WriteLine("1.Add Patient Details 2.Display Patient Details 3.Exit");
+int choice =Convert.ToInt32(Console.ReadLine());
 
 
+    switch (choice)
+    {
+        case 1:
+            Console.WriteLine("Enter Patient Id :");
+            int pId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Patient Name :");
+            string? name = Console.ReadLine();
+            Console.WriteLine("Enter Patient Age :");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Diagnosis :");
+            string? diagnosis = Console.ReadLine();
+            Patient patient=new(pId, name, age, diagnosis);
+            Patient.AddPatientInfo(patient);
+
+        break;
+        case 2:
+            
+            Patient.DisplayPatientDetails();
+        break; 
+        case 3:
+            Environment.Exit(0);
+        break;
+        default:
+            Console.WriteLine("Invalid Choice!!!");
+         break;
+    }
+    Console.WriteLine("Do you want to continue Press 1 or 0 to exit");
+    num = Convert.ToInt32(Console.ReadLine());
+
+} while (num == 1);
 
