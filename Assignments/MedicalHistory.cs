@@ -32,7 +32,7 @@ namespace Assignments
                 FileMode.Append, FileAccess.Write);
             StreamWriter sw = new StreamWriter(file);
 
-            sw.WriteLine("Record Id : {0}\nPatient Id : {1}\nDescription : {2}\nDate :{3}",
+            sw.WriteLine("{0},{1}, {2}, {3}",
                med.RecordId, med.PatientId,med.Description, med.Date);
             sw.Flush();
             sw.Close();
@@ -45,12 +45,12 @@ namespace Assignments
                 FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(stream);
             sr.BaseStream.Seek(0, SeekOrigin.Begin);
-            string? str = sr.ReadToEnd();
+            string? str = sr.ReadLine();
             while (str != null)
             {
-                string[] arr = str.Split(" ");
+                string[] arr = str.Split(",");
                 int n = int.Parse(arr[1]);
-                if (n == pid)
+                if (n==pid)
                 {
                     Console.WriteLine("Record Id : {0} Patient Id : {1} Description : {2} Date :{3}",
                         arr[0], arr[1], arr[2], arr[3]);
