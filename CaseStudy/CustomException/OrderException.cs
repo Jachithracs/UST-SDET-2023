@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CaseStudy.CustomException
 {
-    internal class OrderException
+    internal class OrderException :Exception
     {
+          public OrderException(string message) : base(message) { }
+        
 
     }
 }

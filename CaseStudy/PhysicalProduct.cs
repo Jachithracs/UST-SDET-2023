@@ -21,11 +21,11 @@ namespace CaseStudy
                 if (StockQuantity > 0)
                     Console.WriteLine("Continue to payment");
                 else
-                    Console.WriteLine("product not available");
+                    Console.WriteLine("Product not available");
             }
             else
             {
-                Console.WriteLine("reverting");
+                Console.WriteLine("Returning");
             }
         }
 

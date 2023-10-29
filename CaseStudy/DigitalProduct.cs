@@ -18,14 +18,14 @@ namespace CaseStudy
             int option = Convert.ToInt32(Console.ReadLine());
             if (option == 1)
             {
-                if (StockQuantity > 0)
+                if (StockQuantity >0)
                     Console.WriteLine("Continue to payment");
                 else
                     Console.WriteLine("product not available");
             }
             else
             {
-                Console.WriteLine("reverting");
+                Console.WriteLine("Returning");
             }
         }
 
@@ -39,7 +39,7 @@ namespace CaseStudy
             }
             else
             {
-                Console.WriteLine("payment successful");
+                Console.WriteLine("Payment successful");
             }
         }
 

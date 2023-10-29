@@ -252,8 +252,7 @@ while (true)
                     foreach (var item in customer2.confirmedordersphy)
                     {
                         Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tWeight:{4}" +
-                       "\tDimension:{5}", item.ProductId,
-                       item.Name, item.Price, item.StockQuantity, item.StockQuantity, item.Dimensions);
+                       "\tDimension:{5}", item.ProductId,item.Name, item.Price, item.StockQuantity, item.Weight, item.Dimensions);
                     }
                 }
                 break;
@@ -263,7 +262,20 @@ while (true)
                 break;
         }
 
-
+        Console.WriteLine("do you want to continue as user\n1.yes\n2.no");
+        int optUser = Convert.ToInt32(Console.ReadLine());
+        if (optUser == 1)
+        {
+            continue;
+        }
+        else if (optUser == 2)
+        {
+            break;
+        }
+        else
+        {
+            Console.WriteLine("invalid input");
+        }
 
 
     }
