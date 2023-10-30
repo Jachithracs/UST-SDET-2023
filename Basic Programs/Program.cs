@@ -335,6 +335,7 @@ finally
 
 
 //***********FileOperations Class************
+/*
 FileOperations fileOperations = new FileOperations();
 //fileOperations.CreateFile();
 //fileOperations.WriteData();
@@ -342,6 +343,47 @@ FileOperations fileOperations = new FileOperations();
 //fileOperations.CopyMoveFile();
 //fileOperations.DeleteFile();
 fileOperations.FileProperties();
+*/
+
+//***************GenericExample Class****************
+
+/*
+GenericExample<int> generic1 = new GenericExample<int>(10,20);
+Console.WriteLine(generic1.Val1 + " " + generic1.Val2);
+
+GenericExample<double> generic2 = new GenericExample<double>(10.9887, 20.23456);
+Console.WriteLine(generic2.Val1 + " " + generic2.Val2);
+
+GenericExample<string> generic3 = new GenericExample<string>("Hi", "Hlo");
+Console.WriteLine(generic3.Val1 + " " + generic3.Val2);
+
+GenericExample<bool> generic4 = new GenericExample<bool>(true, false);
+Console.WriteLine(generic4.Val1 + " " + generic4.Val2);
+*/
+
+//GenericExample<int> ga = new GenericExample<int>(new int[] { 10, 20, 30 });
+
+//GenericExample<int> ga = new GenericExample<int>(new int[3] { 10, 20, 30 });
+//Console.WriteLine(ga.Arr);
+
+//ga.Disp();
+/*
+static void Swap<T>(ref T num1, ref T num2)
+{
+    T temp;
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+}
+int n1 = 10 , n2 = 20 ;
+Char c1 = 'A', c2 = 'B';
+
+Swap<int>(ref n1, ref n2);
+Swap<char>(ref c1, ref c2);
+
+Console.WriteLine("a={0},b={1}",n1,n2);
+Console.WriteLine("c={0},b={1}",c1,c2);
+*/
 
 
 

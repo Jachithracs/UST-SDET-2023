@@ -2,6 +2,7 @@
 //Case Study 1
 
 using CaseStudy;
+using static CaseStudy.CustomException.OrderException;
 
 /*
 int choice = 1;
@@ -111,7 +112,10 @@ do
 //Case Study 2
 
 //
-Customer1 customer11 = new Customer1();
+
+try
+{
+    Customer1 customer11 = new Customer1();
 customer11.CustomerID = 1;
 customer11.CustomerName = "Anju Babu";
 customer11.CustomerEmail = "anju@ust";
@@ -129,6 +133,7 @@ Customer1.customers.Add(customer13);
 
 while (true)
 {
+    Console.WriteLine("*******Welcome to Flipo***************");
     Console.WriteLine("choose your option\n1.User\n2.Admin");
     int option = Convert.ToInt32(Console.ReadLine());
     if (option == 1)
@@ -140,7 +145,7 @@ while (true)
             Console.WriteLine("Customer not found");
             break;
         }
-        Console.WriteLine("choose your option\n1.Add product to cart\n2.view all product\n3.place order\n4.Support\n5.view orders");
+        Console.WriteLine("choose your option\n1.Add product to cart\n2.view all product\n3.place order\n4.Customer Support\n5.view orders");
         int optionuser = Convert.ToInt32(Console.ReadLine());
         switch (optionuser)
         {
@@ -172,17 +177,17 @@ while (true)
                 Console.WriteLine("Products are");
                 if (DigitalProduct.Products.Count == 0 && PhysicalProduct.Products.Count == 0)
                 {
-                    Console.WriteLine("No Product Found found");
+                    Console.WriteLine("No Product Found ");
                 }
                 foreach (var item in DigitalProduct.Products)
                 {
-                    Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tFileFormat:{4}\tDownloadlink:{5}", item.ProductId,
+                    Console.WriteLine("Productid:{0}\nProduct Name:{1}\nPrice:{2}\nProduct Quantity:{3}\nFileFormat:{4}\nDownloadlink:{5}", item.ProductId,
                         item.Name, item.Price, item.StockQuantity, item.FileFormat, item.DownloadLink);
                 }
                 foreach (var item in PhysicalProduct.Products)
                 {
-                    Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tWeight:{4}" +
-                        "\tDimension:{5}", item.ProductId,
+                    Console.WriteLine("Productid:{0}\nProduct Name:{1}\nPrice:{2}\nProduct Quantity:{3}\nWeight:{4}" +
+                        "\nDimension:{5}", item.ProductId,
                         item.Name, item.Price, item.StockQuantity, item.Weight, item.Dimensions);
                 }
                 break;
@@ -196,7 +201,7 @@ while (true)
                 {
                     foreach (var item in customer.orders)
                     {
-                        Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tFileFormat:{4}\tDownloadlink:{5}", item.ProductId,
+                        Console.WriteLine("Productid:{0}\nProduct Name:{1}\nPrice:{2}\nProduct Quantity:{3}\nFileFormat:{4}\nDownloadlink:{5}", item.ProductId,
                          item.Name, item.Price, item.StockQuantity, item.FileFormat, item.DownloadLink);
                         item.PlaceOrder();
                         item.ProcessPayment();
@@ -205,8 +210,8 @@ while (true)
                     }
                     foreach (var item in customer.ordersphy)
                     {
-                        Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tWeight:{4}" +
-                       "\tDimension:{5}", item.ProductId,item.Name, item.Price, item.StockQuantity, item.Weight, item.Dimensions);
+                        Console.WriteLine("Productid:{0}\nProduct Name:{1}\nPrice:{2}\nProduct Quantity:{3}\nWeight:{4}" +
+                       "\nDimension:{5}", item.ProductId,item.Name, item.Price, item.StockQuantity, item.Weight, item.Dimensions);
                         item.PlaceOrder();
                         item.ProcessPayment();
                         item.DeliveryOrder();
@@ -233,7 +238,7 @@ while (true)
 
                 break;
             case 4:
-                Console.WriteLine("call this number for support 987654321");
+                Console.WriteLine("For Customer Support !!!\n Dial this number 987654321");
                 break;
             case 5:
                 Customer1 customer2 = Customer1.customers.Find(x => x.CustomerID == cusId);
@@ -246,12 +251,12 @@ while (true)
                     Console.WriteLine("Orders are");
                     foreach (var item in customer2.confirmedorders)
                     {
-                        Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tFileFormat:{4}\tDownloadlink:{5}", item.ProductId,
+                        Console.WriteLine("Productid:{0}\nProduct Name:{1}\nPrice:{2}\nProduct Quantity:{3}\nFileFormat:{4}\nDownloadlink:{5}", item.ProductId,
                         item.Name, item.Price, item.StockQuantity, item.FileFormat, item.DownloadLink);
                     }
                     foreach (var item in customer2.confirmedordersphy)
                     {
-                        Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tWeight:{4}" +
+                        Console.WriteLine("Productid:{0}\nProduct Name:{1}\nPrice:{2}\nProduct Quantity:{3}\nWeight:{4}" +
                        "\tDimension:{5}", item.ProductId,item.Name, item.Price, item.StockQuantity, item.Weight, item.Dimensions);
                     }
                 }
@@ -295,6 +300,8 @@ while (true)
                 string? productName = Console.ReadLine();
                 Console.WriteLine("enter the price");
                 double productCost = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Enter the stock quantity");
+                int stock= Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter the fileformat");
                 string? fileFormat = Console.ReadLine();
                 Console.WriteLine("Enter downloadLink");
@@ -307,6 +314,8 @@ while (true)
                 digitalProduct.FileFormat = fileFormat;
                 digitalProduct.DownloadLink = downloadLink;
                 digitalProduct.Price = productCost;
+                digitalProduct.StockQuantity = stock;
+                Product.AddProduct(digitalProduct);
                 DigitalProduct.Products.Add(digitalProduct);
             }
             else if (optionProduct == 2)
@@ -317,6 +326,8 @@ while (true)
                 string? productName = Console.ReadLine();
                 Console.WriteLine("enter the price");
                 double productCost = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Enter the stock quantity");
+                int stock = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter the Weight");
                 int weight = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter dimension");
@@ -328,7 +339,8 @@ while (true)
                 physicalProduct.Price = productCost;
                 physicalProduct.Dimensions = dimension;
                 physicalProduct.Weight = weight;
-
+                physicalProduct.StockQuantity = stock;
+                Product.AddProducts(physicalProduct);
                 PhysicalProduct.Products.Add(physicalProduct);
             }
             else
@@ -356,4 +368,9 @@ while (true)
         Console.WriteLine("invalid input");
     }
 
+}
+}
+catch (UserException ex)
+{
+    Console.WriteLine(ex.Message);
 }
