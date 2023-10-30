@@ -388,3 +388,107 @@ else
     Console.WriteLine("Room doesn't exist");
 }
 */
+Product1Info<string> product = new Product1Info<string>();
+int choice, option;
+do
+{
+    Console.WriteLine("Choose The option");
+    Console.WriteLine("1.Add Product\n2.Remove Product\n3.Update Product\n4.Get Product By Id\n5.Get Product By Name");
+    choice = Convert.ToInt32(Console.ReadLine());
+    switch (choice)
+    {
+        case 1:
+            Console.WriteLine("Enter The Product Id :");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter The Product Name :");
+            string? productname = Console.ReadLine();
+            Console.WriteLine("Enter The Price :");
+            double price = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the stock quantity");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+            product.AddProduct(new Product1<string>(id, productname, price, quantity));
+        break;
+        case 2:
+            Console.WriteLine("Enter the product Id to Delete");
+            int productId = Convert.ToInt32(Console.ReadLine());
+            var item = product.GetProductById(productId);
+            if (item != null)
+            {
+                product.RemoveProduct(productId);
+                Console.WriteLine("Product Deleted Successfully!!!!");
+            }
+            else
+            {
+                Console.WriteLine("No Product Found!!!");
+            }
+            break;
+           
+        case 3:
+            Console.WriteLine("Enter the product id for updation");
+            int productid = Convert.ToInt32(Console.ReadLine());
+            var prId = product.GetProductById(productid);
+            if (prId != null)
+            {
+                Console.WriteLine("Enter the Product Name :");
+                string? name = Console.ReadLine();
+                Console.WriteLine("Enter the price :");
+                double pric = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Enter the stock quantity :");
+                int qt = Convert.ToInt32(Console.ReadLine());
+                product.UpdateProduct(productid, name, pric, qt);
+                Console.WriteLine("Updated Successfully ");
+
+            }
+            else
+            {
+                Console.WriteLine("No Product Found!!!");
+            }
+
+            break;
+
+        case 4:
+            Console.WriteLine("View Product BY Id");
+            Console.WriteLine("Enter The Product Id");
+            int pid = Convert.ToInt32(Console.ReadLine());
+            Product1<string> pro = product.GetProductById(pid);
+            if (pro != null)
+            {
+                Console.WriteLine($"Product Id:{pro.ProductId}\nProduct Name:{pro.Name}" +
+                    $"\nPrice:{pro.Price}\nQuantity:{pro.StockQuantity}");
+            }
+            else
+            {
+                Console.WriteLine("No Product Found!!!");
+            }
+
+
+
+            break;
+        case 5:
+            Console.WriteLine("Search Product By Name");
+            string? proname = Console.ReadLine();
+            List<Product1<string>> data = product.GetProductByName(proname);
+            if (data != null)
+            {
+                foreach (Product1<string> p in data)
+                {
+                    Console.WriteLine($"Product Id:{p.ProductId}\nProduct Name:{p.Name}" +
+                    $"\nPrice:{p.Price}\nQuantity:{p.StockQuantity}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Product Found!!!");
+            }
+            break;
+        case 6:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Invalid Option!!!!");
+            break;
+    }
+    Console.WriteLine("Do you want to continue \n1. Yes \n2.No");
+    option = Convert.ToInt32(Console.ReadLine());
+
+} while (option == 1);
