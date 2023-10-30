@@ -109,6 +109,7 @@ do
     } while (choice != 0) ;
 */
 
+//28-10-2023
 //Case Study 2
 
 //
@@ -233,9 +234,6 @@ try
 
 
                     }
-
-
-
                     break;
                 case 4:
                     Console.WriteLine("For Customer Support !!!\n Dial this number 987654321");
@@ -286,7 +284,7 @@ try
         }
         else if (option == 2)
         {
-            Console.WriteLine("choose option\n1.Add Product\n2.View report");
+            Console.WriteLine("choose option\n1.Add Product\n2.View details");
             int optionadmin = Convert.ToInt32(Console.ReadLine());
             if (optionadmin == 1)
             {

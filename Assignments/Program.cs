@@ -311,7 +311,7 @@ int choice =Convert.ToInt32(Console.ReadLine());
 
 */
 //Medical History Class
-
+/*
 int num = 1;
 do
 {
@@ -352,3 +352,39 @@ do
     num = Convert.ToInt32(Console.ReadLine());
 
 } while (num == 1);
+*/
+
+//**********30-10-2023***************
+
+//************HotelRoom & RoomReservation class****************
+
+/*
+
+HotelRoom hotel = new HotelRoom(401, "Double", true);
+RoomReservation<HotelRoom> room = new();
+
+room.BookRoom(hotel);
+Console.WriteLine("Hotel Room booked Successfully");
+Console.WriteLine("Details are :");
+string? status;
+foreach (var item in RoomReservation<HotelRoom>.values)
+{
+    if (item.IsBooked)
+        status = "Engaged";
+    else
+        status = "Not Engaged";
+    Console.WriteLine("Room Number:{0} Room Type:{1} Status:{2} ", item.RoomNumber, item.RoomType, status);
+}
+Console.WriteLine("Enter the room number for canceling:");
+int num = Convert.ToInt32(Console.ReadLine());
+var roomNum = HotelRoom.GetRoom(num);
+if (roomNum != null)
+{
+    room.CancelRoom(roomNum);
+    Console.WriteLine("Room is canceled");
+}
+else
+{
+    Console.WriteLine("Room doesn't exist");
+}
+*/
