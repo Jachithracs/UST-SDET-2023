@@ -499,7 +499,7 @@ do
 //*************31-10-2023*****************
 
 //Employees Class
-
+/*
 class Program
 {
     public delegate double BonusCalculation(Employees emp);
@@ -557,5 +557,38 @@ class Program
     {
         Console.WriteLine("Employee Id :{0}\n Employee Name :{1} \n Performance Rating :{2}\nBonus Amount:{3} ",
             employees.EmployeeId, employees.Name, employees.PerformanceRating, bon);
+    }
+}
+*/
+
+//HotelEvent Class
+
+class Program
+{
+    public delegate string? NotificationMessage1(string message);
+    public delegate string? NotificationMessage2(string message);
+    public static void Main(string[] args)
+    {
+        HotelEvent hotel = new("Camp Fire", "Kochi", "10-07-2023 : 16:48", 8);
+        NotificationMessage1 messageOne = HotelEvent.EventRegistration;
+        if(hotel != null) 
+        {
+            Console.WriteLine(messageOne($" {hotel.EventName} is Successfully Registered the event at {hotel.Location} on {hotel.EventDate} "));
+        }
+        else
+        {
+            Console.WriteLine(messageOne("Unsuccessfully registered"));
+        }
+        HotelEvent hotelOne = new("Onam Celebration", "Kozhicode", "09-02-2023 : 01:34", 3);
+
+        NotificationMessage2 messageTwo = HotelEvent.EventRegistration;
+        if (hotelOne != null)
+        {
+            Console.WriteLine(messageTwo($" {hotelOne.EventName} is Successfully Registered the event at {hotelOne.Location} on {hotelOne.EventDate}"));
+        }
+        else
+        {
+            Console.WriteLine(messageTwo("Unsuccessfully registered"));
+        }
     }
 }
