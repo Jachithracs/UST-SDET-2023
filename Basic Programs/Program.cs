@@ -52,6 +52,7 @@ switch(x)
 //driver
 using Basic_Programs;
 using Basic_Programs.ExceptionMessages;
+using System.Text.RegularExpressions;
 
 //************Calculation Class*******************
 
@@ -384,6 +385,59 @@ Swap<char>(ref c1, ref c2);
 Console.WriteLine("a={0},b={1}",n1,n2);
 Console.WriteLine("c={0},b={1}",c1,c2);
 */
+
+//******************DelegateExample Class****************
+
+//public delegate void Del1();
+/*
+public delegate void Del1(string msg);
+public delegate void Del2(int n1,int n2);
+public delegate int Del3(int n1, int n2);
+
+
+//class Program
+class Program  //: DelegateExample
+{
+    private static Del1 MethodA; //inheritance
+    
+
+    public static void Main(string[] args)
+    {
+        //Del1 dobj1 = DelegateExample.MethodA;
+        //Del1 dobj1 = DelegateExample.MethodA;
+        // DelegateExample delex = new();
+
+        //Del1 dobj1 = delex.MethodA;
+        Del1 dobj1 = MethodA;//Inheritance
+        //dobj1.Invoke();
+       // dobj1("Hy EveryOne!!!");
+
+
+        DelegateExample delEx = new();
+        //Del2 dobj2 = delEx.Add;
+        //dobj2(10, 20);
+
+
+        Del2 dobj2 = delEx.Add;
+
+        Del2 dobj3 = delEx.Sub;
+        Del3 dobj4 = delEx.AddR;
+        // dobj3(10, 20);
+
+        Del2 dobjallop = dobj3 + dobj2 - dobj3;
+       // Del2 dobjallop = dobj3 + dobj2;
+        //Del2 dobjallop2 = dobjallop - dobj3;
+        dobjallop(10, 20);//Multicasting of delegates
+        //DelegateExample delExS = new();
+       
+        //Console.WriteLine(dobj4(10, 20));
+        
+    }
+ 
+
+}
+*/
+
 
 
 
