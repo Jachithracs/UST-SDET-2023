@@ -388,6 +388,8 @@ else
     Console.WriteLine("Room doesn't exist");
 }
 */
+//Product1 & Product1Info class
+/*
 Product1Info<string> product = new Product1Info<string>();
 int choice, option;
 do
@@ -492,3 +494,68 @@ do
     option = Convert.ToInt32(Console.ReadLine());
 
 } while (option == 1);
+*/
+
+//*************31-10-2023*****************
+
+//Employees Class
+
+class Program
+{
+    public delegate double BonusCalculation(Employees emp);
+    public static void Main(string[] args)
+    {
+        Employees employees = new();
+        Console.WriteLine("Enter Employee Id :");
+        employees.EmployeeId=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter Employee Name :");
+        employees.Name=Console.ReadLine();
+        Console.WriteLine("Enter performance rating between 1.0 - 5.0 :");
+        employees.PerformanceRating=Convert.ToDouble(Console.ReadLine());
+        int n;
+        do
+        {
+            Console.WriteLine("Choose any one of the bonus calculation :");
+            Console.WriteLine("1.Performance Bonus \n 2.Variable Pay Bonus\n 3.Special Bonus");
+            Console.WriteLine("Choose any one :");
+            int option = Convert.ToInt32(Console.ReadLine());
+            double bonus;
+
+            switch (option)
+            {
+                case 1:
+                    Console.WriteLine("Performance Bonus : ");
+                    BonusCalculation bonus1 = employees.CalculatePerformanceBonus;
+                    bonus = bonus1(employees);
+                    DisplayDetails(employees, bonus);
+                    break;
+                case 2:
+                    Console.WriteLine("Variable Pay Bonus : ");
+                    BonusCalculation bonus2 = employees.CalculateVariableBonus;
+                    bonus = bonus2(employees);
+                    DisplayDetails(employees, bonus);
+                    break;
+                case 3:
+                    Console.WriteLine("Special Bonus : ");
+                    BonusCalculation bonus3 = employees.CalculateSpecialBonus;
+                    bonus = bonus3(employees);
+                    DisplayDetails(employees, bonus);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Option!!!");
+                    break;
+                    
+
+            }
+            Console.WriteLine("Do you want to continue 1.Yes 2. No");
+            n=Convert.ToInt32(Console.ReadLine());
+        } while (n == 1);
+
+
+    }
+    public static void DisplayDetails(Employees employees,double bon)
+    {
+        Console.WriteLine("Employee Id :{0}\n Employee Name :{1} \n Performance Rating :{2}\nBonus Amount:{3} ",
+            employees.EmployeeId, employees.Name, employees.PerformanceRating, bon);
+    }
+}
