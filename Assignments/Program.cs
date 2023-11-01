@@ -562,7 +562,7 @@ class Program
 */
 
 //HotelEvent Class
-
+/*
 class Program
 {
     public delegate string? NotificationMessage1(string message);
@@ -592,3 +592,19 @@ class Program
         }
     }
 }
+*/
+
+//****************01-11-2023******************
+
+//TourismDestination Class
+
+TourismDestination destination = new TourismDestination("Ponmudi","India",4);
+TourismDestination destination1 = new TourismDestination("Pattaya", "Thailand", 5);
+TourismDestination destination2 = new TourismDestination("Twins Tower", "Malaysia", 2);
+
+TourismDestination.tourisms.Add(destination);
+TourismDestination.tourisms.Add(destination1);
+TourismDestination.tourisms.Add(destination2);
+
+TourismDestination.SortingDestination();
+
