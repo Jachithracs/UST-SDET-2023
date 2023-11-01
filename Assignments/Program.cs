@@ -597,7 +597,7 @@ class Program
 //****************01-11-2023******************
 
 //TourismDestination Class
-
+/*
 TourismDestination destination = new TourismDestination("Ponmudi","India",4);
 TourismDestination destination1 = new TourismDestination("Pattaya", "Thailand", 5);
 TourismDestination destination2 = new TourismDestination("Twins Tower", "Malaysia", 2);
@@ -607,4 +607,51 @@ TourismDestination.tourisms.Add(destination1);
 TourismDestination.tourisms.Add(destination2);
 
 TourismDestination.SortingDestination();
+*/
 
+
+TouristDestination destination = new TouristDestination("Ponmudi", "India", 9.9,1200);
+TouristDestination destination1 = new TouristDestination("Pattaya", "Thailand",8.8,15000 );
+TouristDestination destination2 = new TouristDestination("Twins Tower", "Malaysia", 5,20000);
+TouristDestination destination3 = new TouristDestination("Munnar", "India", 4.5, 2500);
+TouristDestination destination4 = new TouristDestination("Mini Coy", "Lakshadweep", 6, 3000);
+
+
+TouristDestination.tourisms.Add(destination);
+TouristDestination.tourisms.Add(destination1);
+TouristDestination.tourisms.Add(destination2);
+TouristDestination.tourisms.Add(destination3);
+TouristDestination.tourisms.Add(destination4);
+
+
+int n;
+do
+{
+    Console.WriteLine("Choose the Option :");
+    Console.WriteLine(" 1.Display the Top-rated Tourist Destinations \n 2.Display the Destinations based on Price \n 3.Display the Destinations based on Specific Location");
+    int option = Convert.ToInt32(Console.ReadLine());
+    switch(option)
+    {
+        case 1:
+            Console.WriteLine("Tourism Destinations based on Top-Rating : ");
+            TouristDestination.SortingDestinationBasedRating();
+        break;
+        case 2:
+            Console.WriteLine("Tourism Destinations based on Price Per Night : ");
+            TouristDestination.SortingDestinationBasedPrice();
+        break;
+        case 3:
+            Console.WriteLine("Filtering Tourism Destinations based on Location : ");
+            Console.WriteLine("Enter the location to search");
+            string? place = Console.ReadLine();
+            TouristDestination.FilteringDestinationBasedLocation(place);
+            break;
+        default:
+            Console.WriteLine("Invalid Choice");
+        break;
+
+    }
+    Console.WriteLine();
+    Console.WriteLine("Do you want to continue 1.Yes 2.No");
+    n= Convert.ToInt32(Console.ReadLine());
+} while (n == 1);
