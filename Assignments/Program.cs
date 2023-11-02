@@ -609,7 +609,7 @@ TourismDestination.tourisms.Add(destination2);
 TourismDestination.SortingDestination();
 */
 
-
+/*
 TouristDestination destination = new TouristDestination("Ponmudi", "India", 9.9,1200);
 TouristDestination destination1 = new TouristDestination("Pattaya", "Thailand",8.8,15000 );
 TouristDestination destination2 = new TouristDestination("Twins Tower", "Malaysia", 5,20000);
@@ -655,3 +655,37 @@ do
     Console.WriteLine("Do you want to continue 1.Yes 2.No");
     n= Convert.ToInt32(Console.ReadLine());
 } while (n == 1);
+*/
+
+//****************02-11-2023*******************
+
+//Hotel Class
+/*
+Hotel hotel = new Hotel("Ponmudi", "India", 9,"Rajagiri",10);
+Hotel hotel1 = new Hotel("Pattaya", "Thailand",10, "CyberPark", 3);
+Hotel hotel2 = new Hotel("Munnar", "India", 8, "Nilgiri", 4);
+
+await hotel.AddHotelBooking(4);
+await hotel1.AddHotelBooking(7);
+await hotel2.AddHotelBooking(7);
+*/
+
+//TourPackage
+
+TourPackage tour = new TourPackage(101, "Thiruvananthapuram", "01-16-2024", 3200);
+TourPackage tour1 = new TourPackage(102, "Vaikkom", "26-12-2023", 5400);
+TourPackage tour2 = new TourPackage(103, "Palakkad", "04-07-2024", 4500);
+
+TourPackage.TourPackages.Add(tour1);
+TourPackage.TourPackages.Add(tour2);
+TourPackage.TourPackages.Add(tour);
+
+
+Thread thread = new Thread(TourPackage.HotelReservation);
+
+Thread thread1 = new Thread(TourPackage.HotelReservation);
+
+thread1.Start();
+thread1.Join();
+thread.Start();
+
