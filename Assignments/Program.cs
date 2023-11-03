@@ -693,7 +693,7 @@ thread.Start();
 //********************03-11-2023**********************
 
 //TaskItem Class
-
+/*
 int n;
 do
 {
@@ -745,5 +745,22 @@ do
     Console.WriteLine("Do you want to continue ? 1.Yes    2.No");
     n = Convert.ToInt32(Console.ReadLine());
 } while (n == 1);
+*/
+
+//FamilyMembers Class
+
+FamilyMembers parent2 = new FamilyMembers("Parent 2", 60);
+FamilyMembers grandparent = new FamilyMembers("GrandParent", 80);
+FamilyMembers child1= new FamilyMembers("Child 1", 21);
+FamilyMembers parent1 = new FamilyMembers("Parent 1", 43);
+FamilyMembers child2 = new FamilyMembers("Child 2", 9);
+
+grandparent.AddChild(parent1);
+grandparent.AddChild(parent2);
+parent1.AddChild(child1);
+parent2.AddChild(child2);
+
+FamilyTree familyTree = new FamilyTree(grandparent);
+familyTree.DisplayFamilyTree();
 
 
