@@ -671,7 +671,7 @@ await hotel2.AddHotelBooking(7);
 */
 
 //TourPackage
-
+/*
 TourPackage tour = new TourPackage(101, "Thiruvananthapuram", "01-16-2024", 3200);
 TourPackage tour1 = new TourPackage(102, "Vaikkom", "26-12-2023", 5400);
 TourPackage tour2 = new TourPackage(103, "Palakkad", "04-07-2024", 4500);
@@ -688,4 +688,62 @@ Thread thread1 = new Thread(TourPackage.HotelReservation);
 thread1.Start();
 thread1.Join();
 thread.Start();
+*/
+
+//********************03-11-2023**********************
+
+//TaskItem Class
+
+int n;
+do
+{
+    Console.WriteLine("Choose any option");
+    Console.WriteLine("1.Add Task   2.Remove Task   3.Mark Task as Completed.   4.View Tasks   5.Exit");
+   
+    int option = Convert.ToInt32(Console.ReadLine());
+    switch (option)
+    {
+        case 1:
+            Console.WriteLine("Enter Task Id:");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Task Description:");
+            string? desc = Console.ReadLine();
+            string? comp = "Not Completed";
+            TaskItem task = new(id, desc, comp);
+            TaskItem.Items.Add(task);
+            Console.WriteLine("Task Successfully Added");
+            break;
+        case 2:
+            Console.WriteLine("Enter Task Id:");
+            int taskId = Convert.ToInt32(Console.ReadLine());
+            TaskItem.RemoveTask(taskId);
+            break;
+        case 3:
+            Console.WriteLine("Enter Id to Update :");
+            int tasId = Convert.ToInt32(Console.ReadLine());
+            TaskItem.UpdateTask(tasId);
+            break;
+        case 4:
+            if (TaskItem.Items.Count > 0)
+            {
+                Console.WriteLine("Tasks are.... ");
+                TaskItem.DisplayTasks();
+            }
+            else
+            {
+                Console.WriteLine("No tasks available.");
+            }
+            break;
+        case 5:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Invalid choice!!!");
+            break;
+
+    }
+    Console.WriteLine("Do you want to continue ? 1.Yes    2.No");
+    n = Convert.ToInt32(Console.ReadLine());
+} while (n == 1);
+
 
